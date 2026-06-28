@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Martina Birthday Party</title>
+    <meta name="description" content="Invitación digital interactiva para Martina Birthday Party.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="splash-active">
+    <section class="splash" id="splash" aria-label="Bienvenida">
+      <div class="splash__photo" aria-hidden="true"></div>
+      <img class="splash__reflections" src="assets/disco-reflections-overlay.png" alt="" aria-hidden="true">
+      <div class="splash__content">
+        <h1>Martina</h1>
+        <p class="splash__occasion">Mis 15</p>
+        <button class="splash__button" id="enterInvitation" type="button">Ver invitación</button>
+      </div>
+    </section>
+
+    <main>
+      <section class="section welcome-section" id="bienvenida">
+        <div class="section__inner welcome-layout">
+          <div class="welcome-copy-wrap">
+            <p class="welcome-eyebrow" data-copy="welcomeEyebrow">Una noche para recordar</p>
+            <h2 class="welcome-title">
+              <span class="welcome-title__script" data-copy="welcomeTitleScript">Quiero compartir</span>
+              <span class="welcome-title__serif">mis <span>15</span> con las<br>personas que<br>quiero.</span>
+            </h2>
+            <p class="welcome-body" data-copy="welcomeBody">Hay momentos que se sueñan durante mucho tiempo y se guardan para siempre. Me encantaría vivir esta noche rodeada de abrazos, risas, música y todos los recuerdos que vamos a crear juntos.</p>
+          </div>
+          <div class="welcome-photos" id="welcomePhotos" aria-label="Fotos del book de Martina"></div>
+        </div>
+      </section>
+
+      <section class="section countdown-section" id="cuenta-regresiva">
+        <img class="countdown-corner-ball countdown-corner-ball--left" src="assets/disco-ball-cutout.png" alt="" aria-hidden="true">
+        <img class="countdown-corner-ball countdown-corner-ball--right" src="assets/disco-ball-cutout.png" alt="" aria-hidden="true">
+        <img class="countdown-reflections" src="assets/disco-reflections-overlay.png" alt="" aria-hidden="true">
+        <img src="assets/countdown-blue-lips.png" alt="" aria-hidden="true" style="position: absolute; right: clamp(10px, 5vw, 72px); bottom: clamp(22px, 6vh, 70px); width: clamp(118px, 18vw, 230px); z-index: 0; pointer-events: none;">
+        <div class="section__inner countdown-inner">
+          <p class="countdown-kicker">LA CUENTA REGRESIVA YA COMENZ&Oacute;</p>
+          <p class="countdown-heading">Faltan</p>
+          <p class="countdown-script">para mi noche so&ntilde;ada</p>
+          <div class="countdown-divider" aria-hidden="true"></div>
+          <div class="countdown" aria-live="polite">
+            <article class="time-card"><strong class="countdown-value" id="days">0</strong><span>D&Iacute;AS</span></article>
+            <article class="time-card"><strong class="countdown-value" id="hours">00</strong><span>HORAS</span></article>
+            <article class="time-card"><strong class="countdown-value" id="minutes">00</strong><span>MINUTOS</span></article>
+            <article class="time-card"><strong class="countdown-value" id="seconds">00</strong><span>SEGUNDOS</span></article>
+          </div>
+          <div class="countdown-star" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="section date-section" id="fecha">
+        <div class="section__inner date-layout">
+          <p class="date-weekday" id="weekday">S&Aacute;BADO</p>
+          <p class="date-number" id="day">29</p>
+          <p class="date-month" id="monthName">AGOSTO</p>
+          <p class="date-year" id="yearLabel">2026</p>
+          <p class="date-time" id="timeLabel">21:30 hs &middot; 05:00 am</p>
+          <button class="calendar-link" id="calendarButton" type="button">Guardar en mi calendario</button>
+        </div>
+      </section>
+
+      <section class="section location-section" id="como-llegar">
+        <div class="section__inner location-layout">
+          <div class="location-copy">
+            <p class="location-kicker">EL DESTINO DE NUESTRA NOCHE</p>
+            <div class="location-title" aria-label="C&oacute;mo llegar">
+              <span class="location-title__serif">&iquest;C&Oacute;MO</span>
+              <span class="location-title__script">llegar?</span>
+            </div>
+            <p class="location-place-label">EL LUGAR</p>
+            <h2 id="venueName">Gilc&eacute;</h2>
+            <p id="venueAddress">Dr. Melo 2979</p>
+            <button class="location-button" id="openMap" type="button">C&oacute;mo llegar</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dress-section" id="dress-code">
+        <div class="section__inner dress-layout">
+          <div class="dress-copy">
+            <h2>LA NOCHE TIENE UN C&Oacute;DIGO.</h2>
+            <p class="dress-lead">Dress Code</p>
+            <div class="dress-words" aria-label="Elegancia, brillo y personalidad">
+              <span>Elegancia.</span>
+              <span>Brillo.</span>
+              <span>Personalidad.</span>
+            </div>
+            <p class="reserved">Se reserva<br>el color <span>plateado.</span></p>
+          </div>
+          <div class="dress-visual" aria-hidden="true">
+            <img src="assets/dress-code-editorial.png" alt="">
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true">
+        <span></span>
+      </div>
+
+      <section class="section music-section" id="musica">
+        <div class="section__inner music-layout">
+          <div class="music-visual" aria-hidden="true">
+            <img src="assets/music-editorial.png" alt="">
+          </div>
+          <div class="music-copy">
+            <p class="music-kicker">LA BANDA SONORA<br>DE MI FIESTA</p>
+            <h2>LA M&Uacute;SICA TAMBI&Eacute;N CUENTA ESTA HISTORIA.</h2>
+            <div class="music-wave" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="music-text">Antes de la fiesta ayudame a crear la playlist perfecta.</p>
+            <p class="music-text">Agreg&aacute; esa canci&oacute;n que sab&eacute;s que no puede faltar y hac&eacute; que esta noche tambi&eacute;n tenga un pedacito de vos. <span>&hearts;</span></p>
+            <a class="music-button" id="playlistLink" href="#" target="_blank" rel="noopener"><span aria-hidden="true">+</span>Agregar mi canci&oacute;n</a>
+            <p class="music-note">Playlist colaborativa de Spotify.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="galeria">
+        <div class="section__inner">
+          <p class="eyebrow">Galeria</p>
+          <h2>Instantes con brillo propio.</h2>
+          <div class="gallery" id="gallery"></div>
+        </div>
+      </section>
+
+      <section class="section gifts-section" id="regalos">
+        <div class="section__inner gifts-layout">
+          <div class="gifts-copy">
+            <p class="gifts-kicker">LOS MEJORES REGALOS<br>YA EST&Aacute;N AC&Aacute;</p>
+            <p class="gifts-message">Lo m&aacute;s lindo de esta noche ser&aacute; compartirla con vos.</p>
+            <p class="gifts-message">Si adem&aacute;s quer&eacute;s acompa&ntilde;arme con un regalo, encontr&aacute; toda la informaci&oacute;n a continuaci&oacute;n.</p>
+            <span class="gifts-star" aria-hidden="true"></span>
+            <button class="gift-button" id="openGifts" type="button">
+              <span aria-hidden="true">+</span>
+              Ver m&aacute;s
+            </button>
+          </div>
+          <div class="gifts-visual" aria-hidden="true">
+            <img src="assets/gifts-editorial.png" alt="">
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider section-divider--rsvp" aria-hidden="true">
+        <span></span>
+      </div>
+
+      <section class="section rsvp-section" id="confirmacion">
+        <div class="section__inner rsvp-card">
+          <span class="rsvp-star" aria-hidden="true"></span>
+          <p class="rsvp-kicker">LA NOCHE EST&Aacute; POR COMENZAR</p>
+          <h2>Solo falta<br><span>una respuesta.</span></h2>
+          <p>No imagino esta noche sin las personas que quiero.</p>
+          <p>Me ayudar&iacute;a much&iacute;simo que confirmes tu asistencia para preparar cada detalle.</p>
+          <span class="rsvp-heart" aria-hidden="true">&hearts;</span>
+          <a class="rsvp-button" href="https://bloomdate-rsvp.netlify.app/r/xv-martina" target="_blank" rel="noopener">
+            <span aria-hidden="true">✦</span>
+            Reservar mi lugar
+          </a>
+        </div>
+      </section>
+
+      <section class="closing" id="cierre">
+        <img src="assets/martu-polaroid-01.jpeg" alt="Martina">
+        <strong>Martina</strong>
+        <p>Te espero</p>
+      </section>
+    </main>
+
+    <footer class="bloomdate">
+      <p class="bloomdate__made">Hecho con amor <span aria-hidden="true">&hearts;</span> por BloomDate</p>
+      <div class="bloomdate__links">
+        <a href="https://wa.me/541140436324?text=Llegu%C3%A9%20desde%20la%20invitaci%C3%B3n%20de%20Martu%20y%20ahora%20quiero%20tener%20la%20m%C3%ADa." target="_blank" rel="noopener" aria-label="WhatsApp BloomDate">
+          <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.2 19.8 5.4 16A8 8 0 1 1 8 18.4l-3.8 1.4Z"/><path d="M8.9 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2.1.4 0 .6l-.4.5c-.1.1-.2.3-.1.5.3.7 1.3 1.8 2.1 2.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.3.4.5 0 .7-.5 1.5-1.1 1.7-.8.3-2.7-.1-4.5-1.8-1.8-1.7-2.8-3.8-2.6-4.8 0-.2.2-.4.4-.5Z"/></svg></span>
+        </a>
+        <a href="https://www.instagram.com/bloomdate.invitaciones" target="_blank" rel="noopener" aria-label="Instagram BloomDate">
+          <span aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><path d="M17.2 6.9h.1"/></svg></span>
+        </a>
+        <a href="https://bloomdate-site.netlify.app/" target="_blank" rel="noopener" aria-label="Web BloomDate">
+          <span aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4c2 2.2 3 4.8 3 8s-1 5.8-3 8c-2-2.2-3-4.8-3-8s1-5.8 3-8Z"/></svg></span>
+        </a>
+      </div>
+      <p class="bloomdate__rights">&reg; Todos los derechos reservados 2026</p>
+    </footer>
+
+    <div class="modal" id="mapModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__panel">
+        <button class="modal__close" type="button" data-close-modal aria-label="Cerrar mapa">x</button>
+        <h2 id="mapTitle">Nombre del salon</h2>
+        <p id="mapAddress">Direccion completa del salon</p>
+        <div class="map-shell" aria-label="Mapa de ubicaci&oacute;n de Gilc&eacute;">
+          <iframe id="mapFrame" title="Mapa del evento" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a class="location-button" id="mapsLink" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </div>
+    </div>
+
+    <div class="modal gift-modal" id="giftModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__panel gift-modal__panel">
+        <button class="modal__close" type="button" data-close-modal aria-label="Cerrar regalos">x</button>
+        <span class="gift-modal__star" aria-hidden="true"></span>
+        <h2 id="giftModalTitle">Regalos</h2>
+        <div class="gift-modal__line" aria-hidden="true"></div>
+        <div class="gift-bank">
+          <div class="gift-bank__row">
+            <span class="gift-bank__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            </span>
+            <div>
+              <small>Alias</small>
+              <strong id="giftAlias">MARTINA.FIESTA</strong>
+              <em id="copyAliasFeedback" role="status" aria-live="polite"></em>
+            </div>
+            <button class="gift-copy" id="copyAlias" type="button">Copiar alias</button>
+          </div>
+          <div class="gift-bank__row">
+            <span class="gift-bank__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            </span>
+            <div>
+              <small>Titular</small>
+              <strong id="giftHolder">Martina</strong>
+            </div>
+          </div>
+          <div class="gift-bank__row">
+            <span class="gift-bank__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M3 10h18L12 4 3 10Z"/><path d="M5 10v8"/><path d="M9 10v8"/><path d="M15 10v8"/><path d="M19 10v8"/><path d="M4 18h16"/><path d="M3 21h18"/></svg>
+            </span>
+            <div>
+              <small>Entidad</small>
+              <strong id="giftEntity">Mercado Pago</strong>
+            </div>
+          </div>
+        </div>
+        <button class="gift-modal__close" type="button" data-close-modal>Cerrar</button>
+      </div>
+    </div>
+
+    <audio id="backgroundAudio" preload="auto"></audio>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
