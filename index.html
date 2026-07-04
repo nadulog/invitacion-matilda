@@ -3,8 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Martina Birthday Party</title>
-    <meta name="description" content="Invitación digital interactiva para Martina Birthday Party.">
+    <title>Martina | Mis 15</title>
+    <meta name="description" content="Cumplo 15 y quiero compartir una noche soñada con vos. Abrí la invitación para ver todos los detalles.">
+    <meta name="theme-color" content="#000106">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:title" content="Martina | Mis 15">
+    <meta property="og:description" content="Cumplo 15 y quiero compartir una noche soñada con vos. Abrí la invitación para ver todos los detalles.">
+    <meta property="og:image" content="assets/gallery-whatsapp-20260703.jpeg">
+    <meta property="og:image:alt" content="Martina - Mis 15">
+    <meta property="og:site_name" content="Martina Mis 15">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Martina | Mis 15">
+    <meta name="twitter:description" content="Cumplo 15 y quiero compartir una noche soñada con vos. Abrí la invitación para ver todos los detalles.">
+    <meta name="twitter:image" content="assets/gallery-whatsapp-20260703.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -20,6 +32,18 @@
         <button class="splash__button" id="enterInvitation" type="button">Ver invitación</button>
       </div>
     </section>
+
+    <button class="audio-toggle" id="audioToggle" type="button" aria-label="Activar musica" aria-pressed="false" hidden>
+      <span class="audio-toggle__glow" aria-hidden="true"></span>
+      <span class="audio-toggle__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 18.5c0 1.1-1.2 2-2.7 2S3.6 19.6 3.6 18.5s1.2-2 2.7-2S9 17.4 9 18.5Z"/>
+          <path d="M20.4 15.8c0 1.1-1.2 2-2.7 2s-2.7-.9-2.7-2 1.2-2 2.7-2 2.7.9 2.7 2Z"/>
+          <path d="M9 18.5V6.2l11.4-2v11.6"/>
+          <path d="M9 9.4l11.4-2"/>
+        </svg>
+      </span>
+    </button>
 
     <main>
       <section class="section welcome-section" id="bienvenida">
@@ -138,6 +162,21 @@
         </div>
       </section>
 
+      <section class="section bloomkeep-section" id="bloomkeep">
+        <div class="section__inner bloomkeep-layout">
+          <div class="bloomkeep-copy">
+            <p class="bloomkeep-kicker">LOS RECUERDOS DE ESTA NOCHE</p>
+            <h2>BloomKeep</h2>
+            <p class="bloomkeep-text">La fiesta no termina cuando baja la m&uacute;sica.</p>
+            <p class="bloomkeep-text">Durante la noche vas a poder compartir tus fotos, descubrir las de todos los invitados y revivir cada momento en un &aacute;lbum privado que crecer&aacute; en tiempo real.</p>
+          </div>
+          <div class="bloomkeep-image" aria-hidden="true">
+            <img src="assets/bloomkeep-reference.png" alt="">
+          </div>
+          <button class="bloomkeep-button" id="openBloomkeep" type="button">Entrar a BloomKeep</button>
+        </div>
+      </section>
+
       <section class="section gifts-section" id="regalos">
         <div class="section__inner gifts-layout">
           <div class="gifts-copy">
@@ -176,9 +215,11 @@
       </section>
 
       <section class="closing" id="cierre">
-        <img src="assets/martu-polaroid-01.jpeg" alt="Martina">
-        <strong>Martina</strong>
-        <p>Te espero</p>
+        <img src="assets/martina-fullscreen-footer.jpg" alt="Martina">
+        <div class="closing__content">
+          <strong>Martina</strong>
+          <p>Te espero</p>
+        </div>
       </section>
     </main>
 
@@ -198,7 +239,7 @@
       <p class="bloomdate__rights">&reg; Todos los derechos reservados 2026</p>
     </footer>
 
-    <div class="modal" id="mapModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
+    <div class="modal map-modal" id="mapModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mapTitle">
       <div class="modal__backdrop" data-close-modal></div>
       <div class="modal__panel">
         <button class="modal__close" type="button" data-close-modal aria-label="Cerrar mapa">x</button>
@@ -250,6 +291,38 @@
           </div>
         </div>
         <button class="gift-modal__close" type="button" data-close-modal>Cerrar</button>
+      </div>
+    </div>
+
+    <div class="modal bloomkeep-modal" id="bloomkeepModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bloomkeepModalTitle">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__panel bloomkeep-modal__panel">
+        <button class="modal__close" type="button" data-close-modal aria-label="Cerrar BloomKeep">x</button>
+        <span class="bloomkeep-modal__star" aria-hidden="true"></span>
+        <h2 id="bloomkeepModalTitle">&iquest;Qu&eacute; es BloomKeep?</h2>
+        <p>BloomKeep es el &aacute;lbum privado de la fiesta.</p>
+        <p>Durante el evento todos los invitados podr&aacute;n compartir sus fotos en tiempo real para construir juntos el recuerdo de esta noche.</p>
+        <ul class="bloomkeep-modal__features">
+          <li>Sub&iacute; tus fotos desde el celular.</li>
+          <li>Descubr&iacute; las fotos de todos los invitados.</li>
+          <li>Dale like y coment&aacute;.</li>
+          <li>Libro de firmas digital.</li>
+          <li>Ranking de las fotos m&aacute;s votadas.</li>
+          <li>Disponible antes, durante y despu&eacute;s del evento.</li>
+          <li>Acceso privado &uacute;nicamente para invitados.</li>
+        </ul>
+        <div class="bloomkeep-modal__actions">
+          <a class="bloomkeep-modal__primary" href="https://app.bloomkeep.site/martina-15" target="_blank" rel="noopener">Entrar al &aacute;lbum</a>
+          <button class="bloomkeep-modal__secondary" type="button" data-close-modal>Cerrar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal gallery-modal" id="galleryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto de Martina ampliada">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="gallery-modal__panel">
+        <button class="modal__close gallery-modal__close" type="button" data-close-modal aria-label="Cerrar foto">x</button>
+        <img id="galleryModalImage" src="" alt="">
       </div>
     </div>
 

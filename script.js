@@ -131,6 +131,9 @@ function renderGallery() {
   data.gallery.forEach((photo, index) => {
     const figure = document.createElement("figure");
     figure.className = "gallery-card";
+    figure.tabIndex = 0;
+    figure.setAttribute("role", "button");
+    figure.setAttribute("aria-label", `Abrir ${photo.alt || "foto de Martina"}`);
     figure.style.setProperty("--tilt", `${index % 2 === 0 ? -1.6 : 1.4}deg`);
 
     const image = document.createElement("img");
@@ -138,16 +141,39 @@ function renderGallery() {
     image.alt = photo.alt || "Foto de Martina";
     image.loading = "lazy";
 
+    const openPhoto = () => openGalleryPhoto(photo);
+    figure.addEventListener("click", openPhoto);
+    figure.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openPhoto();
+      }
+    });
+
     figure.appendChild(image);
     gallery.appendChild(figure);
   });
 }
 
+function openGalleryPhoto(photo) {
+  const modal = document.querySelector("#galleryModal");
+  const image = document.querySelector("#galleryModalImage");
+  if (!modal || !image) return;
+
+  image.src = photo.src;
+  image.alt = photo.alt || "Foto de Martina";
+  modal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
 function setupModal() {
   const mapModal = document.querySelector("#mapModal");
   const giftModal = document.querySelector("#giftModal");
+  const bloomkeepModal = document.querySelector("#bloomkeepModal");
+  const galleryModalImage = document.querySelector("#galleryModalImage");
   const mapOpenButton = document.querySelector("#openMap");
   const giftOpenButton = document.querySelector("#openGifts");
+  const bloomkeepOpenButton = document.querySelector("#openBloomkeep");
   const closeButtons = document.querySelectorAll("[data-close-modal]");
 
   const openModal = (modal) => {
@@ -160,11 +186,16 @@ function setupModal() {
     document.querySelectorAll(".modal").forEach((modal) => {
       modal.setAttribute("aria-hidden", "true");
     });
+    if (galleryModalImage) {
+      galleryModalImage.removeAttribute("src");
+      galleryModalImage.alt = "";
+    }
     document.body.classList.remove("modal-open");
   };
 
   mapOpenButton?.addEventListener("click", () => openModal(mapModal));
   giftOpenButton?.addEventListener("click", () => openModal(giftModal));
+  bloomkeepOpenButton?.addEventListener("click", () => openModal(bloomkeepModal));
 
   closeButtons.forEach((button) => {
     button.addEventListener("click", closeModals);
@@ -208,9 +239,64 @@ async function startBackgroundAudio() {
   try {
     audio.volume = 0.72;
     await audio.play();
+    updateAudioToggleState();
   } catch (error) {
     audio.pause();
+    updateAudioToggleState();
   }
+}
+
+function updateAudioToggleState() {
+  const button = document.querySelector("#audioToggle");
+  const audio = document.querySelector("#backgroundAudio");
+  if (!button) return;
+
+  const hasPlayableAudio = Boolean(audio && data.audio?.enabled && data.audio.src);
+  const isPlaying = hasPlayableAudio && !audio.paused;
+
+  button.classList.toggle("is-playing", isPlaying);
+  button.classList.toggle("is-muted", !isPlaying);
+  button.setAttribute("aria-pressed", String(isPlaying));
+  button.setAttribute("aria-label", hasPlayableAudio ? (isPlaying ? "Pausar musica" : "Activar musica") : "Ir a la seccion musica");
+}
+
+function revealAudioToggle() {
+  const button = document.querySelector("#audioToggle");
+  if (!button) return;
+  button.hidden = false;
+  updateAudioToggleState();
+}
+
+function setupAudioToggle() {
+  const button = document.querySelector("#audioToggle");
+  const audio = document.querySelector("#backgroundAudio");
+  if (!button) return;
+
+  const hasPlayableAudio = () => Boolean(audio && data.audio?.enabled && data.audio.src);
+
+  button.addEventListener("click", async () => {
+    if (!hasPlayableAudio()) {
+      document.querySelector("#musica")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    try {
+      if (audio.paused) {
+        audio.volume = 0.72;
+        await audio.play();
+      } else {
+        audio.pause();
+      }
+    } catch (error) {
+      audio.pause();
+    } finally {
+      updateAudioToggleState();
+    }
+  });
+
+  audio?.addEventListener("play", updateAudioToggleState);
+  audio?.addEventListener("pause", updateAudioToggleState);
+  audio?.addEventListener("ended", updateAudioToggleState);
 }
 
 function setupSplash() {
@@ -220,7 +306,7 @@ function setupSplash() {
   if (!splash || !enterButton || !firstSection) return;
 
   enterButton.addEventListener("click", async () => {
-    await startBackgroundAudio();
+    revealAudioToggle();
     splash.classList.add("is-leaving");
     document.body.classList.remove("splash-active");
 
@@ -365,16 +451,44 @@ function setupMusicReveal() {
   observer.observe(musicSection);
 }
 
+function setupBloomkeepReveal() {
+  const bloomkeepSection = document.querySelector("#bloomkeep");
+  if (!bloomkeepSection) return;
+
+  const reveal = () => bloomkeepSection.classList.add("is-visible");
+
+  if (!("IntersectionObserver" in window)) {
+    reveal();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          reveal();
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.24 }
+  );
+
+  observer.observe(bloomkeepSection);
+}
+
 applyEditableContent();
 renderGallery();
 updateCountdown();
 setupModal();
+setupAudioToggle();
 setupSplash();
 setupWelcomeReveal();
 setupCountdownReveal();
 setupDateReveal();
 setupDressReveal();
 setupMusicReveal();
+setupBloomkeepReveal();
 
 document.querySelector("#calendarButton").addEventListener("click", downloadCalendarEvent);
 document.querySelector("#copyAlias")?.addEventListener("click", copyAlias);

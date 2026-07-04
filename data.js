@@ -14,17 +14,17 @@ window.invitationData = {
   },
   location: {
     venue: "Gilcé",
-    address: "Dr. Melo 2979",
-    mapsQuery: "Salón de Fiestas Gilcé, Dr. Melo 2979",
+    address: "Dr. Melo 2979 - Lanus Oeste",
+    mapsQuery: "Salón de Fiestas Gilcé, Dr. Melo 2979, Lanus Oeste",
     mapsUrl: "https://maps.app.goo.gl/4k4a7MbrLZuiS3QW8",
     embedUrl: "https://www.google.com/maps?q=Sal%C3%B3n%20de%20Fiestas%20Gilc%C3%A9%2C%20Dr.%20Melo%202979&output=embed"
   },
   playlist: {
-    url: "https://open.spotify.com/playlist/2vkSl6oO4QpPlhcl1zu1pL?si=eji8Eu8HQriwIBGW10lDDA&pi=W7H-U4qwRf6rF&pt=33a66e6f0d8374fc840d528b43cff824"
+    url: "https://open.spotify.com/playlist/2vkSl6oO4QpPlhcl1zu1pL?si=R7aXkPdATSuhBShJQXOQ0w&pi=4EeNgu7bTQ-U9&pt=47fe02e950da834beb35c3acdf7baff9"
   },
   audio: {
-    enabled: false,
-    src: ""
+    enabled: true,
+    src: "assets/memories-david-guetta.mp3"
   },
   gifts: {
     alias: "martu.lrcdo",
@@ -34,30 +34,46 @@ window.invitationData = {
   },
   gallery: [
     {
-      src: "assets/martu-polaroid-01.jpeg",
-      alt: "Foto de Martina"
+      src: "assets/gallery-8636.jpg",
+      alt: "Foto de Martina con humo de colores"
     },
     {
-      src: "assets/martu-polaroid-02.jpeg",
-      alt: "Foto de Martina frente al espejo"
+      src: "assets/gallery-8531.jpg",
+      alt: "Foto de Martina con luz azul"
     },
     {
-      src: "assets/martu-polaroid-01.jpeg",
-      alt: "Retrato temporal de Martina"
+      src: "assets/gallery-whatsapp-20260703.jpeg",
+      alt: "Foto de Martina con el pelo en movimiento"
     },
     {
-      src: "assets/martu-polaroid-02.jpeg",
-      alt: "Foto temporal del book de Martina"
+      src: "assets/gallery-8459.jpg",
+      alt: "Foto de Martina con cartera"
+    },
+    {
+      src: "assets/gallery-8527.jpg",
+      alt: "Foto de Martina con luz roja"
+    },
+    {
+      src: "assets/gallery-8597.jpg",
+      alt: "Retrato de Martina"
+    },
+    {
+      src: "assets/gallery-8592.jpg",
+      alt: "Foto de Martina mirando a cámara"
+    },
+    {
+      src: "assets/gallery-8574.jpg",
+      alt: "Foto de Martina con cartera negra"
     }
   ],
   bookPhotos: [
     {
-      src: "assets/martu-polaroid-01.jpeg",
-      alt: "Foto temporal de Martina"
+      src: "assets/martina-book-8574.jpg",
+      alt: "Foto de Martina con cartera"
     },
     {
-      src: "assets/martu-polaroid-02.jpeg",
-      alt: "Foto temporal de Martina frente al espejo"
+      src: "assets/martina-book-8513.jpg",
+      alt: "Foto de Martina con abrigo"
     }
   ],
   copy: {
