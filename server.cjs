@@ -4,7 +4,7 @@ const path = require("path");
 
 const root = __dirname;
 const port = Number(process.env.PORT || 5173);
-const host = "127.0.0.1";
+const host = process.env.HOST || "127.0.0.1";
 
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -13,7 +13,8 @@ const types = {
   ".png": "image/png",
   ".jpg": "image/jpeg",
   ".jpeg": "image/jpeg",
-  ".webp": "image/webp"
+  ".webp": "image/webp",
+  ".mp3": "audio/mpeg"
 };
 
 const server = http.createServer((request, response) => {

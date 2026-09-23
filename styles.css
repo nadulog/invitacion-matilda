@@ -11,6 +11,252 @@
   --sans: "Inter", Arial, sans-serif;
 }
 
+/* Matilda: identidad negro y dorado */
+:root {
+  --blue: #caa54b;
+  --silver: #e8d39a;
+  --metal: #9a7427;
+  --gold: #caa54b;
+  --gold-light: #f5df9d;
+  --gold-dark: #7c5818;
+  --matilda-script: "Photograph Signature", "Pinyon Script", cursive;
+}
+
+.splash__photo {
+  background-image: url("assets/matilda/matilda-vestido-negro.jpeg");
+  background-position: center 28%;
+  filter: saturate(0.72) contrast(1.08) brightness(0.7);
+}
+
+.splash::before {
+  background:
+    radial-gradient(circle at 72% 22%, rgba(202, 165, 75, 0.24), transparent 25%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.38) 40%, rgba(0, 0, 0, 0.93) 100%);
+}
+
+.splash h1,
+.countdown-heading,
+.date-number,
+.location-title__serif,
+.dress-copy h2,
+.music-copy h2,
+.bloomkeep-copy h2,
+.gifts-copy h2,
+.rsvp-card h2 {
+  background-image: linear-gradient(180deg, #fff9df 0%, #e5c46f 26%, #8c641e 48%, #f8e8ad 66%, #a77b27 100%);
+}
+
+.splash__occasion,
+.welcome-eyebrow,
+.welcome-title__serif span,
+.countdown-kicker,
+.time-card span,
+.date-month,
+.date-year,
+.location-kicker,
+.location-place-label,
+.location-title__script,
+.dress-lead,
+.reserved span,
+.music-kicker,
+.music-text span,
+.bloomkeep-kicker,
+.gifts-kicker,
+.gifts-script,
+.gifts-copy p span,
+.gift-button span,
+.rsvp-kicker,
+.rsvp-card h2 span,
+.rsvp-star,
+.rsvp-heart,
+.rsvp-button span,
+.closing__content p,
+.bloomdate__made span,
+.bloomdate__links span {
+  color: var(--gold-light);
+  text-shadow: 0 0 18px rgba(202, 165, 75, 0.46);
+}
+
+.splash h1::before,
+.splash h1::after,
+.time-card + .time-card::after,
+.countdown-star,
+.gifts-star,
+.rsvp-star {
+  background: var(--gold);
+  box-shadow: 0 0 20px rgba(202, 165, 75, 0.8);
+}
+
+.splash__button,
+.calendar-link,
+.location-button,
+.music-button,
+.bloomkeep-button,
+.bloomkeep-modal__primary,
+.gift-button,
+.gift-copy,
+.gift-modal__close,
+.rsvp-button {
+  border-color: rgba(232, 202, 126, 0.72);
+  box-shadow: 0 0 30px rgba(202, 165, 75, 0.18), inset 0 0 18px rgba(255, 245, 210, 0.05);
+}
+
+.splash__button::after,
+.calendar-link::after,
+.location-button::after,
+.music-button::after,
+.bloomkeep-button::after,
+.bloomkeep-modal__primary::after,
+.rsvp-button::after {
+  background: linear-gradient(90deg, transparent, rgba(202, 165, 75, 0.45), rgba(255, 245, 204, 0.85), transparent);
+}
+
+.countdown-section,
+.date-section,
+.welcome-section,
+.location-section,
+.dress-section,
+.music-section,
+.bloomkeep-section,
+.gifts-section,
+.rsvp-section,
+.closing,
+.bloomdate {
+  background-color: #050402;
+}
+
+.countdown-section {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(202, 165, 75, 0.22), transparent 20%),
+    radial-gradient(circle at 12% 65%, rgba(202, 165, 75, 0.1), transparent 24%),
+    linear-gradient(180deg, rgba(4, 3, 1, 0.84), rgba(3, 2, 1, 0.98)),
+    url("assets/countdown-editorial-bg.png") center / cover no-repeat;
+}
+
+.countdown-section > img:not([class]) {
+  filter: grayscale(1) sepia(1) saturate(2.2) hue-rotate(358deg) brightness(0.85);
+}
+
+.countdown-corner-ball {
+  filter: sepia(0.85) saturate(1.8) brightness(1.05) contrast(1.2) drop-shadow(0 0 46px rgba(202, 165, 75, 0.4));
+}
+
+.countdown-divider::before,
+.countdown-divider::after,
+.gifts-kicker::after,
+.bloomkeep-kicker::after {
+  background: linear-gradient(90deg, transparent, rgba(202, 165, 75, 0.86), rgba(255, 244, 204, 0.55), transparent);
+}
+
+.countdown-divider {
+  background: radial-gradient(circle at 50% 50%, var(--gold) 0 3px, transparent 4px);
+}
+
+.time-card + .time-card::before {
+  background: linear-gradient(180deg, transparent, rgba(202, 165, 75, 0.48), rgba(255, 255, 255, 0.12), rgba(202, 165, 75, 0.48), transparent);
+}
+
+.welcome-section {
+  background:
+    linear-gradient(180deg, rgba(4, 3, 2, 0.95), rgba(9, 6, 2, 0.8), rgba(4, 3, 2, 0.96)),
+    url("assets/welcome-editorial-bg.png") center / cover no-repeat;
+}
+
+.welcome-photo {
+  border-color: rgba(230, 201, 126, 0.72);
+  background: linear-gradient(150deg, #faf3db, #c8a758);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5), 0 0 22px rgba(202, 165, 75, 0.12);
+}
+
+.welcome-photo figcaption strong {
+  color: var(--gold-dark);
+}
+
+.date-section,
+.rsvp-section {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(202, 165, 75, 0.21), transparent 28%),
+    linear-gradient(180deg, #030302, #080602 52%, #020201);
+}
+
+.date-section::before,
+.rsvp-section::before {
+  background:
+    radial-gradient(circle, rgba(232, 202, 126, 0.3) 0 1px, transparent 1.5px) 0 0 / 72px 72px,
+    linear-gradient(112deg, transparent 0 44%, rgba(202, 165, 75, 0.12) 52%, transparent 62%);
+}
+
+.dress-section,
+.music-section,
+.gifts-section {
+  background: #050402;
+}
+
+.dress-visual img,
+.music-visual img,
+.gifts-visual img,
+.bloomkeep-image img {
+  filter: grayscale(0.3) sepia(0.65) saturate(1.2) brightness(0.82) contrast(1.1);
+}
+
+.gallery-section {
+  color: #f8edcf;
+  background: linear-gradient(180deg, #090703, #030302);
+}
+
+.gallery-card {
+  border-color: rgba(202, 165, 75, 0.5);
+  background: linear-gradient(145deg, #f9f1da, #c7a557);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-card:focus-visible {
+  outline-color: rgba(202, 165, 75, 0.8);
+}
+
+.bloomkeep-section,
+.gifts-section,
+.bloomdate {
+  background: radial-gradient(ellipse at 50% 0%, rgba(202, 165, 75, 0.13), transparent 40%), #030302;
+}
+
+.rsvp-card {
+  border-color: rgba(202, 165, 75, 0.46);
+  background: radial-gradient(ellipse at 50% 10%, rgba(202, 165, 75, 0.16), transparent 36%), rgba(4, 3, 1, 0.78);
+  box-shadow: 0 0 54px rgba(202, 165, 75, 0.13), inset 0 0 42px rgba(255, 244, 204, 0.025);
+}
+
+.closing img {
+  object-position: center 28%;
+  filter: saturate(0.72) sepia(0.14) contrast(1.08) brightness(0.58);
+}
+
+.closing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.82));
+  pointer-events: none;
+}
+
+.closing__content {
+  z-index: 2;
+}
+
+.music-section.is-unavailable {
+  display: none;
+}
+
+@media (max-width: 679px) {
+  .splash__photo {
+    background-position: center 24%;
+  }
+
+  .closing img {
+    object-position: 58% center;
+  }
+}
+
 @font-face {
   font-family: "Photograph Signature";
   src: url("assets/fonts/Photograph%20Signature.ttf") format("truetype");

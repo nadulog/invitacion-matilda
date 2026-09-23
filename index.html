@@ -3,31 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Martina | Mis 15</title>
+    <title>Matilda | Mis 15</title>
     <meta name="description" content="Cumplo 15 y quiero compartir una noche soñada con vos. Abrí la invitación para ver todos los detalles.">
     <meta name="theme-color" content="#000106">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_AR">
-    <meta property="og:title" content="Martina | Mis 15">
+    <meta property="og:title" content="Matilda | Mis 15">
     <meta property="og:description" content="Cumplo 15 y quiero compartir una noche soñada con vos. Abrí la invitación para ver todos los detalles.">
-    <meta property="og:image" content="assets/gallery-whatsapp-20260703.jpeg">
-    <meta property="og:image:alt" content="Martina - Mis 15">
-    <meta property="og:site_name" content="Martina Mis 15">
+    <meta property="og:image" content="assets/matilda/matilda-guitarra-sillon.jpeg">
+    <meta property="og:image:alt" content="Matilda - Mis 15">
+    <meta property="og:site_name" content="Matilda Mis 15">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Martina | Mis 15">
+    <meta name="twitter:title" content="Matilda | Mis 15">
     <meta name="twitter:description" content="Cumplo 15 y quiero compartir una noche soñada con vos. Abrí la invitación para ver todos los detalles.">
-    <meta name="twitter:image" content="assets/gallery-whatsapp-20260703.jpeg">
+    <meta name="twitter:image" content="assets/matilda/matilda-guitarra-sillon.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Parisienne&family=Pinyon+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="matilda.css?v=5">
   </head>
   <body class="splash-active">
     <section class="splash" id="splash" aria-label="Bienvenida">
       <div class="splash__photo" aria-hidden="true"></div>
       <img class="splash__reflections" src="assets/disco-reflections-overlay.png" alt="" aria-hidden="true">
       <div class="splash__content">
-        <h1>Martina</h1>
+        <h1>Matilda</h1>
         <p class="splash__occasion">Mis 15</p>
         <button class="splash__button" id="enterInvitation" type="button">Ver invitación</button>
       </div>
@@ -56,7 +57,20 @@
             </h2>
             <p class="welcome-body" data-copy="welcomeBody">Hay momentos que se sueñan durante mucho tiempo y se guardan para siempre. Me encantaría vivir esta noche rodeada de abrazos, risas, música y todos los recuerdos que vamos a crear juntos.</p>
           </div>
-          <div class="welcome-photos" id="welcomePhotos" aria-label="Fotos del book de Martina"></div>
+          <div class="welcome-photos" id="welcomePhotos" aria-label="Fotos del book de Matilda"></div>
+        </div>
+      </section>
+
+      <section class="section guest-section" id="invitados" aria-hidden="false">
+        <div class="section__inner guest-card">
+          <span class="guest-star guest-star--top" aria-hidden="true"></span>
+          <p class="guest-kicker">CON TODO MI CARI&Ntilde;O</p>
+          <p class="guest-intro">Esta invitaci&oacute;n es para</p>
+          <h2 id="nombres-invitados"></h2>
+          <div class="guest-divider" aria-hidden="true"><span></span></div>
+          <p class="guest-passes" id="cantidad-lugares"></p>
+          <p class="guest-message">Me encantar&iacute;a compartir esta noche tan especial con vos.</p>
+          <span class="guest-star guest-star--bottom" aria-hidden="true"></span>
         </div>
       </section>
 
@@ -86,7 +100,7 @@
           <p class="date-number" id="day">29</p>
           <p class="date-month" id="monthName">AGOSTO</p>
           <p class="date-year" id="yearLabel">2026</p>
-          <p class="date-time" id="timeLabel">21:30 hs &middot; 05:00 am</p>
+          <p class="date-time" id="timeLabel">21:00 a 06:00 hs</p>
           <button class="calendar-link" id="calendarButton" type="button">Guardar en mi calendario</button>
         </div>
       </section>
@@ -100,8 +114,8 @@
               <span class="location-title__script">llegar?</span>
             </div>
             <p class="location-place-label">EL LUGAR</p>
-            <h2 id="venueName">Gilc&eacute;</h2>
-            <p id="venueAddress">Dr. Melo 2979</p>
+            <h2 id="venueName">Sociedad Rural Cha&ntilde;ar Ladeado</h2>
+            <p id="venueAddress">S2643 Cha&ntilde;ar Ladeado, Santa Fe</p>
             <button class="location-button" id="openMap" type="button">C&oacute;mo llegar</button>
           </div>
         </div>
@@ -117,7 +131,7 @@
               <span>Brillo.</span>
               <span>Personalidad.</span>
             </div>
-            <p class="reserved">Se reserva<br>el color <span>plateado.</span></p>
+            <p class="reserved">Elegante<br><span>sin colores reservados.</span></p>
           </div>
           <div class="dress-visual" aria-hidden="true">
             <img src="assets/dress-code-editorial.png" alt="">
@@ -207,7 +221,7 @@
           <p>No imagino esta noche sin las personas que quiero.</p>
           <p>Me ayudar&iacute;a much&iacute;simo que confirmes tu asistencia para preparar cada detalle.</p>
           <span class="rsvp-heart" aria-hidden="true">&hearts;</span>
-          <a class="rsvp-button" href="https://bloomdate-rsvp.netlify.app/r/xv-martina" target="_blank" rel="noopener">
+          <a class="rsvp-button" id="boton-confirmar" href="https://bloomdate-rsvp.netlify.app/r/xv-matilda" target="_blank" rel="noopener">
             <span aria-hidden="true">✦</span>
             Reservar mi lugar
           </a>
@@ -215,9 +229,9 @@
       </section>
 
       <section class="closing" id="cierre">
-        <img src="assets/martina-fullscreen-footer.jpg" alt="Martina">
+        <img src="assets/matilda/matilda-guitarra-retrato.jpeg" alt="Matilda">
         <div class="closing__content">
-          <strong>Martina</strong>
+          <strong>Matilda</strong>
           <p>Te espero</p>
         </div>
       </section>
@@ -226,7 +240,7 @@
     <footer class="bloomdate">
       <p class="bloomdate__made">Hecho con amor <span aria-hidden="true">&hearts;</span> por BloomDate</p>
       <div class="bloomdate__links">
-        <a href="https://wa.me/541140436324?text=Llegu%C3%A9%20desde%20la%20invitaci%C3%B3n%20de%20Martu%20y%20ahora%20quiero%20tener%20la%20m%C3%ADa." target="_blank" rel="noopener" aria-label="WhatsApp BloomDate">
+        <a href="https://wa.me/541140436324?text=Llegu%C3%A9%20desde%20la%20invitaci%C3%B3n%20de%20Matilda%20y%20ahora%20quiero%20tener%20la%20m%C3%ADa." target="_blank" rel="noopener" aria-label="WhatsApp BloomDate">
           <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.2 19.8 5.4 16A8 8 0 1 1 8 18.4l-3.8 1.4Z"/><path d="M8.9 8.7c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2.1.4 0 .6l-.4.5c-.1.1-.2.3-.1.5.3.7 1.3 1.8 2.1 2.2.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.3.4.5 0 .7-.5 1.5-1.1 1.7-.8.3-2.7-.1-4.5-1.8-1.8-1.7-2.8-3.8-2.6-4.8 0-.2.2-.4.4-.5Z"/></svg></span>
         </a>
         <a href="https://www.instagram.com/bloomdate.invitaciones" target="_blank" rel="noopener" aria-label="Instagram BloomDate">
@@ -245,8 +259,8 @@
         <button class="modal__close" type="button" data-close-modal aria-label="Cerrar mapa">x</button>
         <h2 id="mapTitle">Nombre del salon</h2>
         <p id="mapAddress">Direccion completa del salon</p>
-        <div class="map-shell" aria-label="Mapa de ubicaci&oacute;n de Gilc&eacute;">
-          <iframe id="mapFrame" title="Mapa del evento" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-shell" aria-label="Mapa de ubicaci&oacute;n de Sociedad Rural Cha&ntilde;ar Ladeado">
+          <iframe id="mapFrame" title="Mapa del evento" loading="eager" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
         <a class="location-button" id="mapsLink" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a>
       </div>
@@ -266,7 +280,7 @@
             </span>
             <div>
               <small>Alias</small>
-              <strong id="giftAlias">MARTINA.FIESTA</strong>
+              <strong id="giftAlias">MATU.ETC</strong>
               <em id="copyAliasFeedback" role="status" aria-live="polite"></em>
             </div>
             <button class="gift-copy" id="copyAlias" type="button">Copiar alias</button>
@@ -277,7 +291,7 @@
             </span>
             <div>
               <small>Titular</small>
-              <strong id="giftHolder">Martina</strong>
+              <strong id="giftHolder">MATILDA ETCHECOLATZ</strong>
             </div>
           </div>
           <div class="gift-bank__row">
@@ -286,7 +300,7 @@
             </span>
             <div>
               <small>Entidad</small>
-              <strong id="giftEntity">Mercado Pago</strong>
+              <strong id="giftEntity">Transferencia bancaria</strong>
             </div>
           </div>
         </div>
@@ -312,13 +326,13 @@
           <li>Acceso privado &uacute;nicamente para invitados.</li>
         </ul>
         <div class="bloomkeep-modal__actions">
-          <a class="bloomkeep-modal__primary" href="https://app.bloomkeep.site/martina-15" target="_blank" rel="noopener">Entrar al &aacute;lbum</a>
+          <a class="bloomkeep-modal__primary" href="https://app.bloomkeep.site/matilda-15" target="_blank" rel="noopener">Entrar al &aacute;lbum</a>
           <button class="bloomkeep-modal__secondary" type="button" data-close-modal>Cerrar</button>
         </div>
       </div>
     </div>
 
-    <div class="modal gallery-modal" id="galleryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto de Martina ampliada">
+    <div class="modal gallery-modal" id="galleryModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto de Matilda ampliada">
       <div class="modal__backdrop" data-close-modal></div>
       <div class="gallery-modal__panel">
         <button class="modal__close gallery-modal__close" type="button" data-close-modal aria-label="Cerrar foto">x</button>
@@ -328,7 +342,8 @@
 
     <audio id="backgroundAudio" preload="auto"></audio>
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script src="data.js?v=4"></script>
+    <script src="script.js?v=5"></script>
+    <script src="assets/invitation-personalization.js?v=2"></script>
   </body>
 </html>

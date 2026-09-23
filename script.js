@@ -35,11 +35,11 @@ function applyEditableContent() {
 
       const image = document.createElement("img");
       image.src = photo.src;
-      image.alt = photo.alt || "Foto del book de Martina";
+      image.alt = photo.alt || "Foto del book de Matilda";
       image.loading = "lazy";
 
       const caption = document.createElement("figcaption");
-      caption.innerHTML = "<span>Martina</span><strong>2026</strong>";
+      caption.innerHTML = `<span>${data.event.honoree}</span><strong>${data.event.year}</strong>`;
 
       imageWrap.appendChild(image);
       figure.appendChild(imageWrap);
@@ -52,7 +52,7 @@ function applyEditableContent() {
   setText("#weekday", data.event.weekday);
   setText("#monthName", data.event.month);
   setText("#yearLabel", data.event.year);
-  setText("#timeLabel", "21:30 hs · 05:00 am");
+  setText("#timeLabel", data.event.timeLabel);
   setText("#venueName", data.location.venue);
   setText("#venueAddress", data.location.address);
   setText("#mapTitle", data.location.venue);
@@ -61,7 +61,12 @@ function applyEditableContent() {
   setText("#giftHolder", data.gifts.holder);
   setText("#giftEntity", data.gifts.entity);
 
-  document.querySelector("#playlistLink").href = data.playlist.url;
+  const playlistLink = document.querySelector("#playlistLink");
+  if (playlistLink && data.playlist.url) {
+    playlistLink.href = data.playlist.url;
+  } else {
+    document.querySelector("#musica")?.classList.add("is-unavailable");
+  }
   const mapFrameUrl = new URL(data.location.embedUrl);
   mapFrameUrl.searchParams.set("z", "16");
   mapFrameUrl.searchParams.set("iwloc", "near");
@@ -101,15 +106,15 @@ function downloadCalendarEvent() {
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//BloomDate//Martina Birthday Party//ES",
+    "PRODID:-//BloomDate//Matilda Mis 15//ES",
     "BEGIN:VEVENT",
-    `UID:martina-birthday-party-${Date.now()}@bloomdate.site`,
+    `UID:matilda-mis-15-${Date.now()}@bloomdate.site`,
     `DTSTAMP:${formatCalendarDate(new Date())}`,
     `DTSTART:${formatCalendarDate(start)}`,
     `DTEND:${formatCalendarDate(end)}`,
     `SUMMARY:${data.event.title}`,
     `LOCATION:${location}`,
-    "DESCRIPTION:Martina Birthday Party",
+    "DESCRIPTION:Mis 15 de Matilda",
     "END:VEVENT",
     "END:VCALENDAR"
   ].join("\r\n");
@@ -133,12 +138,12 @@ function renderGallery() {
     figure.className = "gallery-card";
     figure.tabIndex = 0;
     figure.setAttribute("role", "button");
-    figure.setAttribute("aria-label", `Abrir ${photo.alt || "foto de Martina"}`);
+    figure.setAttribute("aria-label", `Abrir ${photo.alt || "foto de Matilda"}`);
     figure.style.setProperty("--tilt", `${index % 2 === 0 ? -1.6 : 1.4}deg`);
 
     const image = document.createElement("img");
     image.src = photo.src;
-    image.alt = photo.alt || "Foto de Martina";
+    image.alt = photo.alt || "Foto de Matilda";
     image.loading = "lazy";
 
     const openPhoto = () => openGalleryPhoto(photo);
@@ -161,7 +166,7 @@ function openGalleryPhoto(photo) {
   if (!modal || !image) return;
 
   image.src = photo.src;
-  image.alt = photo.alt || "Foto de Martina";
+  image.alt = photo.alt || "Foto de Matilda";
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
 }
@@ -302,8 +307,8 @@ function setupAudioToggle() {
 function setupSplash() {
   const splash = document.querySelector("#splash");
   const enterButton = document.querySelector("#enterInvitation");
-  const firstSection = document.querySelector("#bienvenida");
-  if (!splash || !enterButton || !firstSection) return;
+  const welcomeSection = document.querySelector("#bienvenida");
+  if (!splash || !enterButton || !welcomeSection) return;
 
   enterButton.addEventListener("click", async () => {
     revealAudioToggle();
@@ -311,7 +316,7 @@ function setupSplash() {
     document.body.classList.remove("splash-active");
 
     setTimeout(() => {
-      firstSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      welcomeSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 220);
 
     setTimeout(() => {
